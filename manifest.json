@@ -1,0 +1,30 @@
+{
+    "name": "Hello Extensions",
+    "description" : "Base Level Extension",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_title": "Hello",
+        "default_icon": "hello_extensions.png"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+          "matches": [
+            "https://www.openair.com/*"
+          ],
+          "js": ["jquery-min-3.3.1.js", "hello.js"]
+        }
+      ],
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F",
+                "mac": "MacCtrl+Shift+F"
+            },
+            "description": "Reorder Openair Timesheet Items"
+        }
+    }  
+}
